@@ -10,7 +10,7 @@ app.use((req, res, next) => {
   let endpoint = url[1];
   if (endpoint === "main") {
     let proxy =
-      "http://ec2-3-17-128-193.us-east-2.compute.amazonaws.com/" + path;
+      "http://ec2-18-224-166-95.us-east-2.compute.amazonaws.com/" + path;
     request(proxy)
       .on("error", err => console.log(err))
       .pipe(res);
@@ -27,15 +27,7 @@ app.use((req, res, next) => {
     request(proxy)
       .on("error", err => console.log(err))
       .pipe(res);
-  } else if (endpoint === "sidebar") {
-    if (path.includes("images")) {
-      path = "sidebar/" + path;
-    }
-    let proxy = "http://18.222.207.221:9004/" + path;
-    request(proxy)
-      .on("error", err => console.log(err))
-      .pipe(res);
-  }
+  } 
 });
 
 app.get("/", (req, res) => {});
