@@ -16,8 +16,7 @@ app.use((req, res, next) => {
       .pipe(res);
   } else if (endpoint === "details") {
     let proxy =
-      "http://ec2-18-218-63-15.us-east-2.compute.amazonaws.com/" + path;
-
+      "http://ec2-18-235-34-167.compute-1.amazonaws.com/" + path;
     request(proxy)
       .on("error", err => console.log(err))
       .pipe(res);
