@@ -23,7 +23,7 @@ app.use((req, res, next) => {
       .pipe(res);
   } else if (endpoint === "critics") {
     let proxy =
-      "http://ec2-18-222-250-160.us-east-2.compute.amazonaws.com" + path;
+      "http://ec2-18-222-250-160.us-east-2.compute.amazonaws.com/" + path;
     request(proxy)
       .on("error", err => console.log(err))
       .pipe(res);
