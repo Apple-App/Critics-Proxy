@@ -1,43 +1,43 @@
 {
-    "name": "Critics-Proxy",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon server.js"
+  "name": "mainCard-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Themyscira19/Video-Player-Proxy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Themyscira19/Video-Player-Proxy/issues"
+  },
+  "homepage": "https://github.com/Themyscira19/Video-Player-Proxy#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "proxy": {
+    "/main/*": {
+      "target": "http://localhost:9001"
     },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Themyscira19/Video-Player-Proxy.git"
+    "/details/*": {
+      "target": "http://localhost:9002"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/Themyscira19/Video-Player-Proxy/issues"
+    "/critics/*": {
+      "target": "http://localhost:9003"
     },
-    "homepage": "https://github.com/Themyscira19/Video-Player-Proxy#readme",
-    "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.16.4",
-      "request": "^2.88.0"
-    },
-    "devDependencies": {
-      "nodemon": "^1.18.9"
-    },
-    "proxy": {
-      "/main/*": {
-        "target": "http://localhost:9001"
-      },
-      "/details/*": {
-        "target": "http://localhost:9002"
-      },
-      "/critics/*": {
-        "target": "http://localhost:9003"
-      },
-      "/sidebar/*": {
-        "target": "http://localhost:9004"
-      }
+    "/sidebar/*": {
+      "target": "http://localhost:9004"
     }
   }
+}
